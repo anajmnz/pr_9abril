@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: image("imagenes/one piece 3.jpg");
+}
+header {
+    background-color: #b41212;
+    color: rgb(252, 255, 253);
+    text-align: center;
+    padding: 20px 0;
+}
+header h1 {
+    margin: 0;
+}
+nav {
+    text-align: center;
+    background-color: #e61c1c;
+    padding: 10px 0;
+}
+nav a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    background-color: #ffffff;
+}
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+    overflow-y: auto;
+}
+.product {
+    background-color: white;
+    border-radius: 8px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.product h3 {
+    color: #a12b2b;
+}
+.product p {
+    color: #777;
+}
+.product button {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.product button:hover {
+    background-color: #c42020;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    width: 100%;
+    
+}
