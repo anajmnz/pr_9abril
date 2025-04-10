@@ -28,7 +28,8 @@ async function cargarComics(){
     return comics;
 }
 
-// Espera a que cargarComics() se resuelva antes de pasarlo a showProduct. Antes se estaba devolviendo la promesa del fetch, no los datos
+// Espera a que cargarComics() se resuelva antes de pasarlo a showProduct. 
+// Antes se estaba devolviendo la promesa del fetch, no los datos
 cargarComics().then(comics => {
     const comicsHTML = showProduct(comics);
     container.innerHTML = comicsHTML;

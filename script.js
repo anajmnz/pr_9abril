@@ -1,13 +1,13 @@
-import { getFirstThreeComics } from './api.js';
+import { getAllComics } from './api.js';
 import { showProduct } from './showComic.js';
 
 const container = document.getElementById("container");
 
 
 async function cargarComics(){
-    const comics = await getFirstThreeComics();
+    const comics = await getAllComics();
     console.log(comics);
-    return comics;
+    return comics.slice(0, 3);
 }
 
 // Espera a que cargarComics() se resuelva antes de pasarlo a showProduct. 
