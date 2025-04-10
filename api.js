@@ -9,14 +9,13 @@ const linkAPI = "https://api-onepiece-d9mm.onrender.com/libros" ;
   async function getAllComics () {
     return fetch(linkAPI)
       .then(response => response.json())  
-      .then(data => data.results);  
-      };
+  };
  
 // Solo los 3 primeros de la API: BEST SELLERS
   async function getFirstThreeComics () { 
     return fetch(linkAPI)
-      .then(response => response.json())
-      .then(data => data.results.slice(0, 2)) 
+      .then(response => response.json().slice(0, 2))
+      
   };
   
   export { getAllComics, getFirstThreeComics };
