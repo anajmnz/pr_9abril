@@ -1,3 +1,4 @@
+import { precioOferta } from "./ofertas.js";
 function showProduct(comics) {
 
     // Hacer un string vacío para meter el HTML
@@ -43,29 +44,26 @@ return comicsTop;
 
 
 //OFERTA
-function showOfertas(comics) {
-  let comicsOferta= '';
-  
-  comics.forEach(comic => { 
-    comicsOferta += `
-    <div>
-    <h2>Nuestras Ofertas</h2>
-    <img src="https://cdn-icons-png.flaticon.com/512/272/272535.png">
-      <div class="carta-comic"${comic.id}>
-        <img class="imagen-comic" src="${comic.imagen}" alt="${comic.nombre}" />
-        <h3 class="titulo-comic">${comic.nombre}</h3>
-      </div>
-    <p>+</p>
-      <div class="carta-comic" ${comic.id}>
-        <img class="imagen-comic" src="${comic.imagen}" alt="${comic.nombre}" />
-        <h3 class="titulo-comic">${comic.nombre}</h3>
-      </div>
-    <button class="comprar-btn" onclick="comprar(${comic.id})">Añadir al carrito</button>
-    <p> numero del precio rebajado </p>
+function showOfertas(comic1, comic2,idOferta) {
+  let comicsOferta=  `
+  <div>
+  <h2>Pack Oferta</h2>
+  <img src="https://cdn-icons-png.flaticon.com/512/272/272535.png">
+    <div class="carta-comic"${comic1.id}>
+      <img class="imagen-comic" src="${comic1.imagen}" alt="${comic1.nombre}" />
+      <h3 class="titulo-comic">${comic1.nombre}</h3>
     </div>
-    `;
-   
-  });
+  <p>+</p>
+    <div class="carta-comic" ${comic2.id}>
+      <img class="imagen-comic" src="${comic2.imagen}" alt="${comic2.nombre}" />
+      <h3 class="titulo-comic">${comic2.nombre}</h3>
+    </div>
+  <button class="comprar-btn" onclick="comprar(${idOferta})">Añadir al carrito</button>
+  <p>${precioOferta(comic1.precio, comic2.precio )}€ </p>
+  </div>
+  `;
+
+
   
   return comicsOferta;
   } 
