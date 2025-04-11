@@ -20,7 +20,7 @@ function showProduct(comics) {
 } 
 
 
-//top1
+//TOP
 function showTops(comics) {
 let comicsTop = '';
 let posicion = 1
@@ -42,7 +42,39 @@ return comicsTop;
 } 
 
 
-export { showProduct, showTops };
+//OFERTA
+function showOfertas(comics) {
+  let comicsOferta= '';
+  
+  comics.forEach(comic => { 
+    comicsOferta += `
+    <div>
+    <h2>Nuestras Ofertas</h2>
+    <img src="https://cdn-icons-png.flaticon.com/512/272/272535.png">
+      <div class="carta-comic"${comic.id}>
+        <img class="imagen-comic" src="${comic.imagen}" alt="${comic.nombre}" />
+        <h3 class="titulo-comic">${comic.nombre}</h3>
+      </div>
+    <p>+</p>
+      <div class="carta-comic" ${comic.id}>
+        <img class="imagen-comic" src="${comic.imagen}" alt="${comic.nombre}" />
+        <h3 class="titulo-comic">${comic.nombre}</h3>
+      </div>
+    <button class="comprar-btn" onclick="comprar(${comic.id})">Añadir al carrito</button>
+    <p> numero del precio rebajado </p>
+    </div>
+    `;
+   
+  });
+  
+  return comicsOferta;
+  } 
+
+
+export { showProduct, showTops, showOfertas };
+
+
+
 
 
 /*
