@@ -11,16 +11,16 @@ const comicsOferta = [];
 
 cargarComics().then(comics => {
     comics.forEach(comic => {
-        if (comic.id == 1){
+        if (comic.id == 2){
             comicsOferta.push(comic); 
         } 
-        else if (comic.id == 2){
+        else if (comic.id == 6){
             comicsOferta.push(comic); 
         }
-        else if (comic.id == 3){
+        else if (comic.id == 1){
             comicsOferta.push(comic); 
         }
-        else if (comic.id == 4){
+        else if (comic.id == 8){
             comicsOferta.push(comic); 
         }
     })
