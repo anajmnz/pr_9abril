@@ -25,8 +25,13 @@ nav a {
     font-weight: bold;
 }
 nav a:hover {
-    background-color: #ffffff;
+    background-color: #ef4444;
 }
+
+a{
+    text-decoration: none; 
+}
+
 .products {
     display: flex;
     flex-wrap: wrap;
@@ -72,5 +77,56 @@ footer {
     text-align: center;
     padding: 5px 0;
     width: 100%;
+    
+}
+
+/* estilos footer */
+
+
+footer {
+    background-color: #333;
+    color: rgb(249, 248, 248);
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: rgb(249, 248, 248);
+    text-decoration: none;
+}
+
+footer .social-media {
+    margin-top: 10px;
+}
+
+footer .social-media a {
+    margin: 0 10px;
+}
+
+footer .logos {
+    width: 30px;
+    height: 30px;
+}
+
+footer {
+    background-color: #de0e0e;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    width: 100%;
+    
+}
+
+.logos{
+    width: 50px;
+    font-display: inline-block;
+}
+#facebook {
+    display: inline-block;
+    width: 50px;
     
 }

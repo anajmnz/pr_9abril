@@ -11,27 +11,30 @@
 
     <!-- Cabecera -->
     <header>
-        <h1>Tienda de Mangas</h1>
-        <p>Encuentra tus mangas favoritos aquí</p>
+        <img style="width: auto; height: 170px;" src ="./imagenes/One-Piece-Logo-PNG-Images.png">
+        <p class="eslogan">Encuentra tus mangas favoritos aquí</p>
     </header>
 
     <!-- Barra de navegación -->
     <nav>
-        <a href="#">Inicio</a>
-        <a href="productos.html#">Productos</a>
-        <a href="#">Ofertas</a>
-        <a href="#">Contacto</a>
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="ofertas.html">Ofertas</a>
+        <a href="contacto.html">Contacto</a>
     </nav>
+
 
     <!-- Sección de Productos -->
     <div id="container"></div>
        
 
     <!-- Pie de página -->
-    <footer>
-        <p>© 2025 Tienda de Mangas | Todos los derechos reservados</p>
-        <p><a href="mailto:contacto@tiendamangas.com" style="color: rgb(196, 26, 26);">contacto@tiendamangas.com</a></p>
-    </footer>
+    <div id="footer-container"></div>
+    <script src="footer.js"></script>
+
+    <script>
+        createFooter('footer-container');
+    </script>   
 
     <script type="module" src="script.js"></script>
 

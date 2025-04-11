@@ -12,3 +12,5 @@
 8. Crear un js donde se "llamen" los datos de la API
 9. Crear "cards"
 10. Vincular API con todos los js 
+
+
