@@ -1,5 +1,5 @@
 import { getAllComics } from './api.js';
-import { showProduct } from './showComic.js';
+import { showTops } from './showComic.js';
 
 const container = document.getElementById("container");
 
@@ -14,6 +14,6 @@ async function cargarComics(){
 // Antes se estaba devolviendo la promesa del fetch, no los datos.
 
 cargarComics().then(comics => {
-    const comicsHTML = showProduct(comics);
+    const comicsHTML = showTops(comics);
     container.innerHTML = comicsHTML;
 });

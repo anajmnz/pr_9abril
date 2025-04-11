@@ -23,7 +23,7 @@ function showProduct(comics) {
 //top1
 function showTops(comics) {
 let comicsTop = '';
-posicion = 1
+let posicion = 1
 
 comics.forEach(comic => { 
   comicsTop += `
@@ -31,7 +31,6 @@ comics.forEach(comic => {
       <p>TOP ${posicion}</p>
       <img class="imagen-comic" src="${comic.imagen}" alt="${comic.nombre}" />
       <h3 class="titulo-comic">${comic.nombre}</h3>
-      <p class="descripcion-comic">${comic.descripcion}</p>
       <p class="precio-comic">Precio: ${comic.precio}€</p>
       <button class="comprar-btn" onclick="comprar(${comic.id})">Añadir al carrito</button>
     </div>
