@@ -1,66 +1,80 @@
+/* ESTILOS GENERALES */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: image("imagenes/one piece 3.jpg");
+    background-image: url("imagenes/one piece 3.jpg"); /* Corrige la url de la imagen */
+    background-size: cover;
+    background-position: center;
 }
+
 header {
     background-color: #b41212;
     color: rgb(252, 255, 253);
     text-align: center;
     padding: 20px 0;
 }
+
 header h1 {
     margin: 0;
 }
+
 nav {
     text-align: center;
     background-color: #e61c1c;
     padding: 10px 0;
 }
+
 nav a {
     color: white;
     padding: 10px 20px;
     text-decoration: none;
     font-weight: bold;
 }
+
 nav a:hover {
     background-color: #ef4444;
 }
 
-a{
+a {
     text-decoration: none; 
 }
 
-.products {
+/* PRODUCTOS */
+#container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 20px;
     overflow-y: auto;
 }
-.product {
+
+.carta-comic-pr {
     background-color: white;
     border-radius: 8px;
     margin: 10px;
     width: 200px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 15px;
 }
-.product img {
+
+.imagen-comic-pr {
     width: 100%;
     height: auto;
     border-radius: 5px;
 }
-.product h3 {
+
+.titulo-comic-pr {
     color: #a12b2b;
 }
-.product p {
+
+.descripcion-comic-pr {
     color: #777;
 }
-.product button {
-    background-color: #333;
+
+.comprar-btn-pr {
+    background-color: #a12b2b;
     color: white;
     padding: 10px;
     border: none;
@@ -68,24 +82,150 @@ a{
     cursor: pointer;
     margin-top: 10px;
 }
-.product button:hover {
+
+.comprar-btn-pr:hover {
     background-color: #c42020;
 }
-footer {
-    background-color: #333;
-    color: white;
+
+/* INICIO: BEST SELLERS */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+    overflow-y: auto;
+}
+
+#titulo-bs {
+    color: #b41212;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 28px;
     text-align: center;
-    padding: 5px 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.numTop {
+    color: #3670af;
+    font-weight: 700;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+hr {
+    color: #3670af;
+    border: none;
+    height: 1px;
+    background-color: #3670af;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.carta-comic {
+    background-color: white;
+    border-radius: 8px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+.imagen-comic {
     width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.titulo-comic {
+    color: #a12b2b;
+}
+
+.descripcion-comic {
+    color: #777;
+}
+
+.comprar-btn {
+    background-color: #a12b2b;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.comprar-btn:hover {
+    background-color: #c42020;
+}
+
+/* OFERTAS */
+#container-ofertas {
+    display: flex; 
+    flex-direction: row;
+    justify-content: center; 
+    gap: 20px; 
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.packOfertas {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0;
+    width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
     
 }
 
-/* estilos footer */
-footer {
-    background-color: #333;
-    color: rgb(249, 248, 248);
-    padding: 20px;
+.packOfertas h2 {
     text-align: center;
+    margin-bottom: 20px;
+    color: #a12b2b;
+}
+
+.contenido-oferta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* .contenido-oferta .carta-comic {
+    width: 800px;
+} */
+
+.simbolo-mas {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0 10px;
+    flex-shrink: 0; 
+}
+
+.info-oferta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.precio-oferta {
+    font-size: 22px;
+    font-weight: bold;
+    color: #a12b2b;
+    margin-bottom: 10px;
+}
+
+/* FOOTER */
+footer {
+    background-color: #de0e0e;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
 }
 
 footer p {
@@ -110,25 +250,19 @@ footer .logos {
     height: 30px;
 }
 
-footer {
-    background-color: #de0e0e;
-    color: white;
-    text-align: center;
-    padding: 5px 0;
-    width: 100%;
-    
-}
-
-.logos{
+.logos {
     width: 50px;
     font-display: inline-block;
 }
+
 #facebook {
     display: inline-block;
     width: 50px;
-    
 }
 
-
-/* estilos best sellers INICIO */
-
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .packOfertas {
+        width: 100%; /* En pantallas pequeñas, cada oferta ocupará toda la fila */
+    }
+}

@@ -6,12 +6,12 @@ function showProduct(comics) {
 
     comics.forEach(comic => {
       comicsHTML += `
-        <div class="carta-comic">
-          <img class="imagen-comic" src="${comic.imagen}" alt="${comic.nombre}" />
-          <h3 class="titulo-comic">${comic.nombre}</h3>
-          <p class="descripcion-comic">${comic.descripcion}</p>
-          <p class="precio-comic">Precio: ${comic.precio}€</p>
-          <button class="comprar-btn" onclick="comprar(${comic.id})">Añadir al carrito</button>
+        <div class="carta-comic-pr  ">
+          <img class="imagen-comic-pr" src="${comic.imagen}" alt="${comic.nombre}" />
+          <h3 class="titulo-comic-pr">${comic.nombre}</h3>
+          <p class="descripcion-comic-pr">${comic.descripcion.length > 100 ? comic.descripcion.slice(0, 100) + '...' : comic.descripcion}</p>
+          <p class="precio-comic-pr">Precio: ${comic.precio}€</p>
+          <button class="comprar-btn-pr" onclick="comprar(${comic.id})">Añadir al carrito</button>
         </div>
       `;
     });
@@ -29,7 +29,8 @@ let posicion = 1
 comics.forEach(comic => { 
   comicsTop += `
     <div class="carta-comic">
-      <p>TOP ${posicion}</p>
+      <p class="numTop">TOP ${posicion}</p>
+      <hr clas="hr-bs">
       <img class="imagen-comic" src="${comic.imagen}" alt="${comic.nombre}" />
       <h3 class="titulo-comic">${comic.nombre}</h3>
       <p class="precio-comic">Precio: ${comic.precio}€</p>
@@ -45,23 +46,26 @@ return comicsTop;
 
 //OFERTA
 function showOfertas(comic1, comic2,idOferta) {
-  let comicsOferta=  `
-  <div>
-  <h2>Pack Oferta</h2>
-  <img src="https://cdn-icons-png.flaticon.com/512/272/272535.png">
-    <div class="carta-comic"${comic1.id}>
-      <img class="imagen-comic" src="${comic1.imagen}" alt="${comic1.nombre}" />
-      <h3 class="titulo-comic">${comic1.nombre}</h3>
+  let comicsOferta = `
+  <div class="packOfertas">
+    <h2>Pack Oferta</h2>
+    <div class="contenido-oferta">
+      <div class="carta-comic">
+        <img class="imagen-comic" src="${comic1.imagen}" alt="${comic1.nombre}" />
+        <h3 class="titulo-comic">${comic1.nombre}</h3>
+      </div>
+      <p class="simbolo-mas">+</p>
+      <div class="carta-comic">
+        <img class="imagen-comic" src="${comic2.imagen}" alt="${comic2.nombre}" />
+        <h3 class="titulo-comic">${comic2.nombre}</h3>
+      </div>
     </div>
-  <p>+</p>
-    <div class="carta-comic" ${comic2.id}>
-      <img class="imagen-comic" src="${comic2.imagen}" alt="${comic2.nombre}" />
-      <h3 class="titulo-comic">${comic2.nombre}</h3>
+    <div class="info-oferta">
+      <p class="precio-oferta">${precioOferta(comic1.precio, comic2.precio)}€</p>
+      <button class="comprar-btn" onclick="comprar(${idOferta})">Añadir al carrito</button>
     </div>
-  <button class="comprar-btn" onclick="comprar(${idOferta})">Añadir al carrito</button>
-  <p>${precioOferta(comic1.precio, comic2.precio )}€ </p>
   </div>
-  `;
+`;
 
 
   

@@ -1,8 +1,7 @@
 import { getAllComics } from './api.js';
 import { showOfertas } from './showComic.js';
 
-const container = document.getElementById("container");
-const container2 = document.getElementById("container2");
+const container = document.getElementById("container-ofertas");
 
 async function cargarComics(){
     const comics = await getAllComics();
