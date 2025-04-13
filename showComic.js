@@ -1,4 +1,6 @@
 import { precioOferta } from "./ofertas.js";
+
+ 
 function showProduct(comics) {
 
     // Hacer un string vacío para meter el HTML
@@ -66,9 +68,6 @@ function showOfertas(comic1, comic2,idOferta) {
     </div>
   </div>
 `;
-
-
-  
   return comicsOferta;
   } 
 
@@ -76,6 +75,17 @@ function showOfertas(comic1, comic2,idOferta) {
 export { showProduct, showTops, showOfertas };
 
 
+
+// Componentes para el carrito
+
+function comicsCarrito(esOferta){
+  if(esOferta === true){
+
+  }else{
+
+  }
+  return comicsCarrito;
+}
 
 
 
