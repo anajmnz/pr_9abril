@@ -4,11 +4,16 @@
 // 3. Si no es oferta, busca el cómic por id, crea un objeto con su id y esOferta: false y lo agrega.
 // 4. Luego guarda todo y lleva al usuario a la página del carrito.
 
-import { precioOferta } from "./showComic";
 
 
 const cart = JSON.parse(localStorage.getItem('carrito')) || [];
 
+//precio final carrito
+let precioTotal = 0;
+cart.map(cartItem => precioTotal += cartItem.precio)
+console.log(precioTotal)
+
+//container carrito en html
 const container = document.getElementById("container-carrito");
 function showCart(cart) {
 
@@ -18,22 +23,22 @@ function showCart(cart) {
     if (cartItem.esOferta) {
       cartHTML += `
       <div class="packOfertas">
-    <h2>Pack Oferta</h2>
-    <div class="contenido-oferta">
-      <div class="carta-comic">
-        <img class="imagen-comic" src="${cartItem.imagen1}" alt="${cartItem.nombre1}" />
-        <h3 class="titulo-comic">${cartItem.nombre1}</h3>
+        <h2>Pack Oferta</h2>
+        <div class="contenido-oferta">
+          <div class="carta-comic">
+            <img class="imagen-comic" src="${cartItem.imagen1}" alt="${cartItem.nombre1}" />
+            <h3 class="titulo-comic">${cartItem.nombre}</h3>
+          </div>
+          <p class="simbolo-mas">+</p>
+          <div class="carta-comic">
+            <img class="imagen-comic" src="${cartItem.imagen2}" alt="${cartItem.nombre2}" />
+            <h3 class="titulo-comic">${cartItem.nombre2}</h3>
+          </div>
+        </div>
+        <div class="info-oferta">
+          <p class="precio-oferta">${cartItem.precio}€</p>
+        </div>
       </div>
-      <p class="simbolo-mas">+</p>
-      <div class="carta-comic">
-        <img class="imagen-comic" src="${cartItem.imagen2}" alt="${cartItem.nombre2}" />
-        <h3 class="titulo-comic">${cartItem.nombre2}</h3>
-      </div>
-    </div>
-    <div class="info-oferta">
-      <p class="precio-oferta">${precioOferta(cartItem.precio1, cartItem.precio2)}€</p>
-    </div>
-  </div>
     `;
 
     } else {
