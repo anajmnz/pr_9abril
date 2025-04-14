@@ -1,16 +1,14 @@
-function precioOferta(precio1,precio2){
+export function precioOferta(precio1,precio2){
   let precioRebajado= (precio1+precio2)*0.75;
   return precioRebajado;
  
 }
 
-import { comprar } from "./carrito.js";
  
 function showProduct(comics) {
 
     // Hacer un string vacío para meter el HTML
     let comicsHTML = '';  
-    const comprar = () => console.log("test")
     comics.forEach(comic => {
       comicsHTML += `
         <div class="carta-comic-pr  ">
@@ -70,7 +68,7 @@ function showOfertas(comic1, comic2,idOferta) {
     </div>
     <div class="info-oferta">
       <p class="precio-oferta">${precioOferta(comic1.precio, comic2.precio)}€</p>
-     <button id="${idOferta}" class="comprar-btn-pr" onClick="{const cart = JSON.parse(localStorage.getItem('carrito')) || []; cart.push({id: ${idOferta}, nombre: '${comic1.nombre}',nombre2: '${comic2.nombre}', precio: ${precioOferta(comic1.precio, comic2.precio)}, imagen1: '${comic1.imagen}', imagen2: '${comic2.imagen}', esOferta: true }); localStorage.setItem('carrito', JSON.stringify(cart))}">Añadir al carrito</button>    </div>
+     <button id="${idOferta}" class="comprar-btn-pr" onClick="{const cart = JSON.parse(localStorage.getItem('carrito')) || []; cart.push({id: ${idOferta}, nombre1: '${comic1.nombre}', nombre2: '${comic2.nombre}', precio: ${precioOferta(comic1.precio, comic2.precio)}, imagen1: '${comic1.imagen}', imagen2: '${comic2.imagen}', esOferta: true }); localStorage.setItem('carrito', JSON.stringify(cart))}">Añadir al carrito</button>    </div>
     </div>
   </div>
 `;
@@ -84,14 +82,6 @@ export { showProduct, showTops, showOfertas };
 
 // Componentes para el carrito
 
-function comicsCarrito(esOferta){
-  if(esOferta === true){
-
-  }else{
-
-  }
-  return comicsCarrito;
-}
 
 
 

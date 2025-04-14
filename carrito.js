@@ -4,18 +4,54 @@
 // 3. Si no es oferta, busca el cómic por id, crea un objeto con su id y esOferta: false y lo agrega.
 // 4. Luego guarda todo y lleva al usuario a la página del carrito.
 
-  export function comprar(itemCompradoStr) {
-    // const itemComprado = JSON.parse(itemCompradoStr)
-    // console.log(itemCompradoStr)
-    // //crear variable para guardar los  objteos. Si no hay guardados, crear un array.
-    // const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  
-      
-    //   carrito.push(itemComprado);
+import { precioOferta } from "./showComic";
 
-    // //   //subir itemComprado al carrito
-    //   localStorage.setItem("carrito", JSON.stringify(carrito))
-    console.log(itemCompradoStr)
+
+const cart = JSON.parse(localStorage.getItem('carrito')) || [];
+
+const container = document.getElementById("container-carrito");
+function showCart(cart) {
+
+  // Hacer un string vacío para meter el HTML
+  let cartHTML = '';
+  cart.forEach(cartItem => {
+    if (cartItem.esOferta) {
+      cartHTML += `
+      <div class="packOfertas">
+    <h2>Pack Oferta</h2>
+    <div class="contenido-oferta">
+      <div class="carta-comic">
+        <img class="imagen-comic" src="${cartItem.imagen1}" alt="${cartItem.nombre1}" />
+        <h3 class="titulo-comic">${cartItem.nombre1}</h3>
+      </div>
+      <p class="simbolo-mas">+</p>
+      <div class="carta-comic">
+        <img class="imagen-comic" src="${cartItem.imagen2}" alt="${cartItem.nombre2}" />
+        <h3 class="titulo-comic">${cartItem.nombre2}</h3>
+      </div>
+    </div>
+    <div class="info-oferta">
+      <p class="precio-oferta">${precioOferta(cartItem.precio1, cartItem.precio2)}€</p>
+    </div>
+  </div>
+    `;
+
+    } else {
+      cartHTML += `
+      <div class="carta-comic-pr  ">
+        <img class="imagen-comic-pr" src="${cartItem.imagen}" alt="${cartItem.nombre}" />
+        <h3 class="titulo-comic-pr">${cartItem.nombre}</h3>
+        <p class="precio-comic-pr">Precio: ${cartItem.precio}€</p>
+      </div>
+    `;
     }
-  
 
+
+  });
+
+  return cartHTML
+}
+
+
+const cartHTML = showCart(cart);
+container.innerHTML = cartHTML;
