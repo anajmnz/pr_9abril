@@ -1,21 +1,28 @@
-import { precioOferta } from "./ofertas.js";
+function precioOferta(precio1,precio2){
+  let precioRebajado= (precio1+precio2)*0.75;
+  return precioRebajado;
+ 
+}
 
+import { comprar } from "./carrito.js";
  
 function showProduct(comics) {
 
     // Hacer un string vacío para meter el HTML
     let comicsHTML = '';  
-
+    const comprar = () => console.log("test")
     comics.forEach(comic => {
+      const cartItem = {...comic, esOferta:false}
       comicsHTML += `
         <div class="carta-comic-pr  ">
           <img class="imagen-comic-pr" src="${comic.imagen}" alt="${comic.nombre}" />
           <h3 class="titulo-comic-pr">${comic.nombre}</h3>
           <p class="descripcion-comic-pr">${comic.descripcion.length > 100 ? comic.descripcion.slice(0, 100) + '...' : comic.descripcion}</p>
           <p class="precio-comic-pr">Precio: ${comic.precio}€</p>
-          <button class="comprar-btn-pr" onclick="comprar(${comic.id})">Añadir al carrito</button>
+          <button id="${comic.id}" class="comprar-btn-pr">Añadir al carrito</button>
         </div>
       `;
+      
     });
     
     // Poner todo el HTML generado dentro del contenedor
@@ -48,6 +55,7 @@ return comicsTop;
 
 //OFERTA
 function showOfertas(comic1, comic2,idOferta) {
+  const cartItem = {comic1: comic1, comic2: comic2, idOferta, esOferta:true}
   let comicsOferta = `
   <div class="packOfertas">
     <h2>Pack Oferta</h2>
@@ -64,7 +72,7 @@ function showOfertas(comic1, comic2,idOferta) {
     </div>
     <div class="info-oferta">
       <p class="precio-oferta">${precioOferta(comic1.precio, comic2.precio)}€</p>
-      <button class="comprar-btn" onclick="comprar(${idOferta})">Añadir al carrito</button>
+      <button class="comprar-btn" onclick="comprar()">Añadir al carrito</button>
     </div>
   </div>
 `;

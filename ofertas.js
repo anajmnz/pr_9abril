@@ -2,16 +2,11 @@ import { getAllComics } from './api.js';
 import { showOfertas } from './showComic.js';
 
 const container = document.getElementById("container-ofertas");
+const container2 = document.getElementById("container2");
 
 async function cargarComics(){
     const comics = await getAllComics();
     return comics;
-}
-
-export function precioOferta(precio1,precio2){
-    let precioRebajado= (precio1+precio2)*0.75;
-    return precioRebajado;
-   
 }
 
 const comicsOferta = [];

@@ -62,3 +62,5 @@ function createFooter(containerId) {
         container.appendChild(footer);
     }
 }
+
+createFooter('footer-container');

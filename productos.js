@@ -33,6 +33,7 @@ async function cargarComics(){
 cargarComics().then(comics => {
     const comicsHTML = showProduct(comics);
     container.innerHTML = comicsHTML;
+    
 });
 
 
