@@ -12,17 +12,16 @@ function showProduct(comics) {
     let comicsHTML = '';  
     const comprar = () => console.log("test")
     comics.forEach(comic => {
-      const cartItem = {...comic, esOferta:false}
       comicsHTML += `
         <div class="carta-comic-pr  ">
           <img class="imagen-comic-pr" src="${comic.imagen}" alt="${comic.nombre}" />
           <h3 class="titulo-comic-pr">${comic.nombre}</h3>
           <p class="descripcion-comic-pr">${comic.descripcion.length > 100 ? comic.descripcion.slice(0, 100) + '...' : comic.descripcion}</p>
           <p class="precio-comic-pr">Precio: ${comic.precio}€</p>
-          <button id="${comic.id}" class="comprar-btn-pr">Añadir al carrito</button>
+          <button id="${comic.id}" class="comprar-btn-pr" onClick="{const cart = JSON.parse(localStorage.getItem('carrito')) || []; cart.push({id: ${comic.id}, nombre: '${comic.nombre}', precio: ${comic.precio}, imagen: '${comic.imagen}',descripcion: '${comic.descripcion}', esOferta: false }); localStorage.setItem('carrito', JSON.stringify(cart))}">Añadir al carrito</button>
         </div>
       `;
-      
+
     });
     
     // Poner todo el HTML generado dentro del contenedor
@@ -43,8 +42,7 @@ comics.forEach(comic => {
       <img class="imagen-comic" src="${comic.imagen}" alt="${comic.nombre}" />
       <h3 class="titulo-comic">${comic.nombre}</h3>
       <p class="precio-comic">Precio: ${comic.precio}€</p>
-      <button class="comprar-btn" onclick="comprar(${comic.id})">Añadir al carrito</button>
-    </div>
+      <button id="${comic.id}" class="comprar-btn-pr" onClick="{const cart = JSON.parse(localStorage.getItem('carrito')) || []; cart.push({id: ${comic.id}, nombre: '${comic.nombre}', precio: ${comic.precio}, imagen: '${comic.imagen}',descripcion: '${comic.descripcion}', esOferta: false }); localStorage.setItem('carrito', JSON.stringify(cart))}">Añadir al carrito</button>    </div>
   `;
   posicion += 1
 });
@@ -72,7 +70,7 @@ function showOfertas(comic1, comic2,idOferta) {
     </div>
     <div class="info-oferta">
       <p class="precio-oferta">${precioOferta(comic1.precio, comic2.precio)}€</p>
-      <button class="comprar-btn" onclick="comprar()">Añadir al carrito</button>
+     <button id="${idOferta}" class="comprar-btn-pr" onClick="{const cart = JSON.parse(localStorage.getItem('carrito')) || []; cart.push({id: ${idOferta}, nombre: '${comic1.nombre}',nombre2: '${comic2.nombre}', precio: ${precioOferta(comic1.precio, comic2.precio)}, imagen1: '${comic1.imagen}', imagen2: '${comic2.imagen}', esOferta: true }); localStorage.setItem('carrito', JSON.stringify(cart))}">Añadir al carrito</button>    </div>
     </div>
   </div>
 `;

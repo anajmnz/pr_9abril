@@ -15,7 +15,7 @@
 
     // //   //subir itemComprado al carrito
     //   localStorage.setItem("carrito", JSON.stringify(carrito))
-    console.log("test")
+    console.log(itemCompradoStr)
     }
   
 
