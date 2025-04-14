@@ -1,3 +1,9 @@
+// FUNCIÓN COMPRAR
+// 1. Recuperar el carrito o lo crearlo (array)
+// 2. Si el id es 23 o 24, es una oferta y guarda solo el id y el boolean esOferta: true.
+// 3. Si no es oferta, busca el cómic por id, crea un objeto con su id y esOferta: false y lo agrega.
+// 4. Luego guarda todo y lleva al usuario a la página del carrito.
+
 function comprar(id) {
 
     //crear variable para guardar los  objteos. Si no hay guardados, crear un array.
@@ -6,7 +12,7 @@ function comprar(id) {
     // Si el id es 23 o 24, es una oferta
     if (id === 23 || id === 24) {
 
-      // obejto oferta con id, y diciendo que esOferta es true
+      // objeto oferta con id, y diciendo que esOferta es true
       const oferta = {
         id,
         esOferta: true
