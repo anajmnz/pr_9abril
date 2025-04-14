@@ -266,3 +266,121 @@ footer .logos {
         width: 100%; /* En pantallas pequeñas, cada oferta ocupará toda la fila */
     }
 }
+
+
+/* APARTADO CARRITO */
+#container-carrito, #container-precio_carrito {
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  #container-carrito {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+  
+  #container-precio-carrito {
+    width: 25%;
+  }
+  
+  /* div rojo con el precio total*/
+  .box-precio-total {
+    background-color: red;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+  
+  
+  /* Contenedor que tiene los dos containers del carrito */
+.contenedor-flex {
+    display: flex;
+    gap: 20px; 
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Contenedor del resumen del pedido */
+.box-precio-total {
+    background-color: #ffe3e3;
+    border: 2px solid #ff4d4d;
+    border-radius: 16px;
+    padding: 24px;
+    padding-right: 18px;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    gap: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Título del resumen */
+  .titulo-pedido {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #c70000;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+   
+  /* Detalles de precios */
+  .precio-productos,
+  .precio-envio,
+  .precio-total {
+    font-size: 1.1rem;
+    margin: 4px 0;
+    text-align: right;
+    margin-right: 10%;
+  }
+  
+  /* Precio total con más énfasis */
+  .precio-total {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #d80000;
+    text-align: right;
+  }
+  
+  /* Línea divisoria */
+  .box-precio-total hr {
+    width: 95%;
+    border: none;
+    border-top: 2px  #fff;
+    margin: 10px 0;
+  }
+  
+  /* Botón tramitar */
+  #tramitar-pedido {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 12px 20px;
+    margin-top: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: 85%;
+  }
+  
+  #tramitar-pedido:hover {
+    background-color: #e60000;
+  }
+  
+  .tramitar {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  

@@ -6,12 +6,35 @@
 
 
 
+// Recuperar el carrito
 const cart = JSON.parse(localStorage.getItem('carrito')) || [];
 
-//precio final carrito
-let precioTotal = 0;
-cart.map(cartItem => precioTotal += cartItem.precio)
-console.log(precioTotal)
+// Calcular el precio de los productos
+let precioProductos = 0;
+cart.map(cartItem => precioProductos += cartItem.precio);
+
+// Mostrar resumen de precio (productos + envío)
+function mostrarPrecioTotal(precioProductos) {
+  const precioContainer = document.getElementById("container-precio-carrito");
+
+  const precioEnvio = 3.99;
+  const precioTotal = precioProductos + precioEnvio;
+
+  precioContainer.innerHTML = `
+    <div class="box-precio-total">
+      <p class="titulo-pedido">RESUMEN DEL PEDIDO</p>
+      <p class="precio-productos">Precio productos: ${precioProductos.toFixed(2)} €</p>
+      <p class="precio-envio">Precio envío: ${precioEnvio.toFixed(2)} €</p>
+      <hr />
+      <p class="precio-total">Precio total: ${precioTotal.toFixed(2)} €</p>
+      <div id="tramitar-pedido">
+        <p class="tramitar">Tramitar pedido</p>
+      </div>
+    </div>
+  `;
+}
+
+mostrarPrecioTotal(precioProductos);
 
 //container carrito en html
 const container = document.getElementById("container-carrito");
