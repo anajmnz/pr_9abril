@@ -4,6 +4,8 @@ export function precioOferta(precio1,precio2){
  
 }
 
+
+// Definir funciones para generar HTML dinámicamente según el tipo (producto, top u oferta)
  
 function showProduct(comics) {
 
