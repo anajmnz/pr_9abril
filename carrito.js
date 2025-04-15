@@ -50,7 +50,7 @@ function showCart(cart) {
         <div class="contenido-oferta">
           <div class="carta-comic">
             <img class="imagen-comic" src="${cartItem.imagen1}" alt="${cartItem.nombre1}" />
-            <h3 class="titulo-comic">${cartItem.nombre}</h3>
+            <h3 class="titulo-comic">${cartItem.nombre1}</h3>
           </div>
           <p class="simbolo-mas">+</p>
           <div class="carta-comic">

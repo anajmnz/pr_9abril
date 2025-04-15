@@ -8,7 +8,9 @@ function createHeader(containerId) {
     const logoImg = document.createElement('img');
     logoImg.src = './imagenes/One-Piece-Logo-PNG-Images.png';
     logoImg.style.width = 'auto';
-    logoImg.style.height = '170px';
+    logoImg.style.marginTop= "10px";
+    logoImg.style.marginBottom = "-5px";
+    logoImg.style.height = '120px';
     header.appendChild(logoImg);
 
     // Crear y agregar el eslogan
@@ -24,17 +26,21 @@ function createHeader(containerId) {
     }
 }
 
+
+
+
 function createNav(containerId) {
     // Crear el elemento <nav>
     const nav = document.createElement('nav');
 
-    // Crear los enlaces de navegación
     const links = [
-        { href: '#', text: 'Inicio' },
-        { href: 'productos.html#', text: 'Productos' },
-        { href: '#', text: 'Ofertas' },
-        { href: '#', text: 'Contacto' }
+        { href: 'index.html', text: 'Inicio' },
+        { href: 'productos.html', text: 'Productos' },
+        { href: 'ofertas.html', text: 'Ofertas' },
+        { href: 'contacto.html', text: 'Contacto' },
+        { href: 'carrito.html', text: 'Carrito' }
     ];
+    
 
     links.forEach(linkData => {
         const link = document.createElement('a');
@@ -49,3 +55,7 @@ function createNav(containerId) {
         container.appendChild(nav);
     }
 }
+
+
+createHeader('header-container')
+createNav('header-container')

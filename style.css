@@ -3,13 +3,10 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url("imagenes/one piece 3.jpg"); /* Corrige la url de la imagen */
-    background-size: cover;
-    background-position: center;
 }
 
 header {
-    background-color: #b41212;
+    background-color: #771212;
     color: rgb(252, 255, 253);
     text-align: center;
     padding: 20px 0;
@@ -66,7 +63,7 @@ a {
 }
 
 .titulo-comic-pr {
-    color: #a12b2b;
+    color: #771212;
 }
 
 .descripcion-comic-pr {
@@ -74,7 +71,7 @@ a {
 }
 
 .comprar-btn-pr {
-    background-color: #a12b2b;
+    background-color: #771212;
     color: white;
     padding: 10px;
     border: none;
@@ -97,7 +94,7 @@ a {
 }
 
 #titulo-bs {
-    color: #b41212;
+    color: #771212;
     margin: auto;
     margin-top: 20px;
     font-size: 28px;
@@ -138,7 +135,7 @@ hr {
 }
 
 .titulo-comic {
-    color: #a12b2b;
+    color: #771212;
 }
 
 .descripcion-comic {
@@ -146,7 +143,7 @@ hr {
 }
 
 .comprar-btn {
-    background-color: #a12b2b;
+    background-color: #771212;
     color: white;
     padding: 10px;
     border: none;
@@ -160,9 +157,16 @@ hr {
 }
 
 /* OFERTAS */
-#container-ofertas {
+#nuestras-ofertas{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center; 
+    gap: 20px; 
+}
+
+#container-ofertas, #container2 {
     display: flex; 
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center; 
     gap: 20px; 
     padding: 10px;
@@ -170,22 +174,27 @@ hr {
 }
 
 .packOfertas {
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 0;
-    width: 500px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 8px;
+    margin: 10px;
+    width: 420px; /* Un poco más ancha */
+    min-height: 330px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     box-sizing: border-box;
-    
 }
 
 .packOfertas h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #a12b2b;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #771212;
 }
 
+/* Contenido de los cómics dentro del pack */
 .contenido-oferta {
     display: flex;
     justify-content: center;
@@ -193,35 +202,83 @@ hr {
     gap: 10px;
 }
 
-/* .contenido-oferta .carta-comic {
-    width: 800px;
-} */
-
 .simbolo-mas {
-    font-size: 30px;
+    font-size: 24px;
     font-weight: bold;
     margin: 0;
-    padding: 0 10px;
-    flex-shrink: 0; 
+    padding: 0 5px;
+    color: #771212;
 }
 
-.info-oferta {
+/* Comic individual dentro del pack */
+.packOfertas .carta-comic {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    width: 120px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+}
+
+.packOfertas .imagen-comic {
+    width: 100%;
+    max-height: 160px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.packOfertas .titulo-comic {
+    font-size: 0.95rem;
+    color: #771212;
+    margin-top: 8px;
+    text-align: center;
+}
+
+
+/* Precio + botón */
+.info-oferta {
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 18px;
 }
 
 .precio-oferta {
-    font-size: 22px;
+    font-size: 1.1rem;
     font-weight: bold;
-    color: #a12b2b;
-    margin-bottom: 10px;
+    color: #771212;
+    margin: 10px 0;
 }
+
+.packOfertas .comprar-btn-pr {
+    background-color: #771212;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.packOfertas .comprar-btn-pr:hover {
+    background-color: #c42020;
+}
+
+/* Responsive para ofertas */
+@media (max-width: 768px) {
+    .packOfertas {
+        width: 95%;
+    }
+}
+
 
 /* FOOTER */
 footer {
-    background-color: #de0e0e;
+    background-color: #e61c1c;
     color: white;
     text-align: center;
     padding: 20px 0;
@@ -257,8 +314,10 @@ footer .logos {
 
 #facebook {
     display: inline-block;
-    width: 50px;
+    width: 45px;
+    height: auto;
 }
+
 
 /* Media Queries para pantallas pequeñas */
 @media (max-width: 768px) {
@@ -289,7 +348,7 @@ footer .logos {
   
   /* div rojo con el precio total*/
   .box-precio-total {
-    background-color: red;
+    background-color: #771212;
     color: white;
     width: 100%;
     padding: 20px;
@@ -309,8 +368,8 @@ footer .logos {
   
   /* Contenedor del resumen del pedido */
 .box-precio-total {
-    background-color: #ffe3e3;
-    border: 2px solid #ff4d4d;
+    background-color: #fff;
+    border: 2px solid #771212;
     border-radius: 16px;
     padding: 24px;
     padding-right: 18px;
@@ -329,7 +388,7 @@ footer .logos {
   .titulo-pedido {
     font-size: 1.6rem;
     font-weight: bold;
-    color: #c70000;
+    color: #771212;
     margin-bottom: 10px;
     text-align: center;
   }
@@ -349,7 +408,7 @@ footer .logos {
   .precio-total {
     font-weight: bold;
     font-size: 1.3rem;
-    color: #d80000;
+    color: #e61c1c;
     text-align: right;
   }
   
@@ -363,7 +422,7 @@ footer .logos {
   
   /* Botón tramitar */
   #tramitar-pedido {
-    background-color: #ff4d4d;
+    background-color: #e61c1c;
     color: white;
     padding: 12px 20px;
     margin-top: 10px;
@@ -375,7 +434,7 @@ footer .logos {
   }
   
   #tramitar-pedido:hover {
-    background-color: #e60000;
+    background-color: #ef4444;
   }
   
   .tramitar {
